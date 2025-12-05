@@ -6,6 +6,7 @@ import { getCaseStudies, getCaseStudy } from '@/lib/mdx';
 import { PROFILE } from '@/config/portfolio';
 
 import { Gallery } from '@/components/Gallery';
+import { MDXImage } from '@/components/ui/MDXImage';
 
 export async function generateStaticParams() {
     const posts = getCaseStudies();
@@ -28,6 +29,12 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 {props.children}
             </h3>
         ),
+        h2: (props: any) => (
+            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3 mt-12">
+                <span className="w-8 h-1 bg-violet-500 rounded-full"></span>
+                {props.children}
+            </h2>
+        ),
         p: (props: any) => (
             <p className="text-zinc-400 leading-relaxed text-lg md:text-xl mb-6">
                 {props.children}
@@ -43,6 +50,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 {props.children}
             </li>
         ),
+        img: MDXImage,
         Gallery: Gallery,
     };
 
@@ -80,12 +88,27 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 </div>
 
                 {/* Hero Image */}
-                <div className={`w-full h-64 md:h-[500px] rounded-3xl ${project.image} mb-16 relative overflow-hidden shadow-2xl shadow-black/50`}>
-                    <div className="absolute inset-0 flex items-center justify-center opacity-40">
-                        {project.category === 'Mobile' && <Smartphone size={150} className="text-white rotate-12" />}
-                        {project.category === 'SaaS' && <Layers size={150} className="text-white -rotate-6" />}
-                        {project.category === 'Web' && <Globe size={150} className="text-white" />}
-                    </div>
+                <div className={`w-full h-64 md:h-[500px] rounded-3xl mb-16 relative overflow-hidden shadow-2xl shadow-black/50 ${project.image.startsWith('/') || project.image.startsWith('http') ? '' : project.image}`}>
+                    {/* Render Image if it's a URL */}
+                    {(project.image.startsWith('/') || project.image.startsWith('http')) && (
+                        <div className="absolute inset-0">
+                            <img
+                                src={project.image}
+                                alt={project.title}
+                                className="w-full h-full object-cover"
+                            />
+                            <div className="absolute inset-0 bg-black/20" />
+                        </div>
+                    )}
+
+                    {/* Render Icons if it's NOT a URL (gradient background) */}
+                    {!(project.image.startsWith('/') || project.image.startsWith('http')) && (
+                        <div className="absolute inset-0 flex items-center justify-center opacity-40">
+                            {project.category === 'Mobile' && <Smartphone size={150} className="text-white rotate-12" />}
+                            {project.category === 'SaaS' && <Layers size={150} className="text-white -rotate-6" />}
+                            {project.category === 'Web' && <Globe size={150} className="text-white" />}
+                        </div>
+                    )}
                 </div>
 
                 {/* Project Meta Grid */}
@@ -124,7 +147,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                             <h3 className="text-3xl font-bold text-white mb-12 text-center">Impact & Results</h3>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                                {project.results.map((res, i) => (
+                                {(project.results || []).map((res, i) => (
                                     <div
                                         key={i}
                                         className="flex flex-col items-center justify-center p-8 bg-zinc-900/80 backdrop-blur-sm rounded-2xl border border-zinc-800 hover:border-violet-500/50 transition-all duration-300 group"
@@ -157,3 +180,4 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         </div>
     );
 }
+

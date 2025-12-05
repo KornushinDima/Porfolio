@@ -49,7 +49,7 @@ export function WorkList({ initialProjects }: WorkListProps) {
             </div>
 
             {/* Grid */}
-            <div className={`grid grid-cols-1 md:grid-cols-2 gap-8 ${animate ? 'opacity-50 translate-y-2' : 'opacity-100 translate-y-0'} transition-all duration-500`}>
+            <div className={`grid grid-cols-1 gap-12 ${animate ? 'opacity-50 translate-y-2' : 'opacity-100 translate-y-0'} transition-all duration-500`}>
                 {visibleProjects.map(project => (
                     <ProjectCard
                         key={project.slug}

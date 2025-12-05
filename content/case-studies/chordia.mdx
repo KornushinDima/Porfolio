@@ -1,0 +1,112 @@
+---
+title: "Chordia"
+category: "Case Study"
+client: "Unknown"
+year: "2024"
+role: "Product Designer"
+image: "bg-gradient-to-br from-blue-500 to-teal-700"
+tags: ["UX", "Product"]
+description: "Case study for Chordia"
+challenge: "Challenge description placeholder."
+solution: "Solution description placeholder."
+results:
+  - value: "100%"
+    label: "Success Rate"
+---
+
+
+Case Study: Chordia
+
+An Interactive Mobile Companion for Songwriting & Improvisation
+
+Role: Product Designer & Prototyper
+
+Platform: Mobile Web (React/PWA)
+
+Tools: React.js, Web Audio API, Lucide Icons, Tailwind CSS
+
+1. The Challenge
+
+Guitarists, especially intermediates, often struggle to bridge the gap between rhythm playing (chords) and lead playing (solos). While many know their scales, they often lack the ability to visualize "chord tones"—the specific notes that make a solo sound melodic and connected to the harmony.
+
+The Problem: Static chord dictionaries and scale charts are boring and disconnected from the act of making music. Musicians need a tool that doesn't just show them the theory, but allows them to hear and play over it in real-time.
+
+The Goal: Design a "pocket backing band" that visualizes the fretboard dynamically, highlighting exactly which notes to play over a custom chord progression.
+
+2. Solution Overview
+
+Chordia is a mobile-first application that combines a backing track player with a dynamic fretboard visualizer.
+
+Dynamic Visuals: As the chord changes in the audio, the fretboard updates instantly to show the new "Safe Notes" (Scale Tones) vs. "Target Notes" (Chord Tones).
+
+Audio Engine: A built-in synthesizer plays the progression, bass, and drums, allowing users to practice immediately without external gear.
+
+Theory made Tactile: Complex concepts like the "Circle of Fifths" are turned into interactive touch controls.
+
+3. Design Evolution & Iterations
+
+Iteration 1: The Desktop Translation (Horizontal)
+
+Concept: Initially, I designed the app with a horizontal fretboard, mimicking how a guitar is held or how tablature is read on a desktop screen.
+
+Friction Point: On mobile devices, a horizontal fretboard requires excessive scrolling or tiny, unclickable touch targets. It didn't fit the "thumb zone" of natural mobile usage.
+
+Iteration 2: The Mobile Pivot (Vertical)
+
+Solution: I rotated the fretboard 90 degrees to a vertical orientation.
+
+# Why it works:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Ergonomics: It maximizes the vertical screen real estate of smartphones.
+
+Mental Model: It mimics the view of a player looking down at their own fretboard while holding the guitar.
+
+One-Handed Use: The sidebar controls for selecting chords (I, IV, V) became easily accessible with a thumb, while the fretboard remained visible.
+
+Iteration 3: Gamifying Theory (The Key Selector)
+
+Initial State: Key selection was a standard dropdown menu. Functional, but boring.
+
+Insight: Music theory is cyclical. The "Circle of Fifths" is the standard map for musicians, but it's usually a static image.
+
+Final Design: I built an Interactive Circle of Fifths Wheel.
+
+Users can "spin" the wheel to transpose the song.
+
+It visualizes the relationship between the Major key (outer ring), Relative Minor (middle ring), and Diminished chords (inner ring).
+
+Result: Changing keys became a playful, exploratory interaction rather than a form-filling task.
+
+4. UI & Visual Identity
+
+I chose a "Dark Mode" aesthetic (Slate-900 & Midnight Blue) to suit the environment where musicians often practice—dimly lit studios or bedrooms.
+
+# Color Coding System:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+🟡 Gold: Chord Tones (The "Target" notes). High contrast to draw the eye immediately.
+
+🔵 Cyan: Scale Tones (The "Path" notes). Cooler color to recede slightly, indicating they are safe but less resolved.
+
+🌑 Ghost Notes: Dimmed styling for notes outside the key to reduce cognitive load.
+
+Typography: Bold, monospaced numbers for tempo and intervals to ensure readability at a glance while playing.
+
+5. Technical Implementation (Prototyping)
+
+Unlike a static Figma mockup, I built a fully functional prototype using React.
+
+State Management: Used React State to sync the Audio Engine (Web Audio API) with the Visual Layer (DOM elements). When the audio engine hits Beat 1 of a new bar, it triggers a state update that "paints" the new chord tones on the fretboard.
+
+Responsive SVG: The Circle of Fifths wheel uses mathematical SVG pathing to ensure it renders crisply on any device size without pixelation.
+
+6. Key Takeaways
+
+Context is King: Moving from horizontal to vertical orientation saved the UX. Always design for the device holding the app, not just the content being displayed.
+
+Make Theory Tangible: Abstract concepts like music theory become much easier to grasp when they are turned into physical interactions (spinning, tapping) rather than static charts.
+
+Feedback Loops: The immediate audio feedback when tapping a note on the screen bridged the gap between "seeing" a pattern and "hearing" it, validating the user's learning instantly.

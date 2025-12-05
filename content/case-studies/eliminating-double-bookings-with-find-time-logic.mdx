@@ -1,0 +1,94 @@
+---
+title: "Eliminating Double-Bookings with Find Time Logic"
+category: "Case Study"
+client: "Coconut Software"
+year: "2024"
+role: "Product Designer"
+image: "/images/findtime.png"
+tags: ["UX", "Product"]
+description: "Case study for Eliminating Double-Bookings with Find Time Logic"
+challenge: "How might we allow users to book complex, multi-staff appointments from anywhere in the application without creating scheduling conflicts?"
+solution: "A 'Find Time' feature integrated directly into the booking modal that visualizes team availability and prevents double-booking."
+results:
+  - value: "~0%"
+    label: "Booking Errors"
+  - value: "100%"
+    label: "Conflict Prevention"
+---
+
+# Case Study: Eliminating Double-Bookings with "Find Time" Logic
+
+**Project:** Coconut Software Appointment Modal
+**Role:** Product Designer
+**Focus:** UI/UX Design, Interaction Design, Prototyping, Usability Testing
+
+## 1. Executive Summary
+
+At Coconut Software, scheduling is the core product. However, the existing "Create Appointment" modal had a critical flaw: it allowed users to book slots without validating staff availability, particularly when booking on behalf of multiple staff members.
+
+I designed a "Find Time" feature—integrated directly into the booking modal—that visualizes team availability and prevents double-booking. This feature reduced scheduling conflicts and improved the user's confidence in the booking process.
+
+## 2. Discovery: Quantifying the Friction
+
+The core friction occurred when users tried to book appointments involving multiple staff members (e.g., a Financial Advisor and a Mortgage Specialist) from pages outside the main calendar view.
+
+To validate this, I analyzed user feedback collected via Pendo. By running the raw feedback through an AI script, I categorized support tickets and open-text responses to identify recurring themes.
+
+![AI-assisted categorization of user feedback revealed a high volume of frustration regarding "blind booking" conflicts.](/images/findatime/image%201.png)
+
+**The Pain Points Identified:**
+*   **No Visibility:** The booking modal was isolated from the calendar.
+*   **The "Any Slot" Error:** Users could technically select any time slot, even if staff were busy.
+*   **Double Booking:** This required manual rescheduling and caused frustration for the end customer.
+
+> **User Insight:** "I have to open three different tabs just to see if everyone is free, then go back to the modal to book it. If I guess, I usually get it wrong."
+
+## 3. The Challenge
+
+How might we allow users to book complex, multi-staff appointments from anywhere in the application without creating scheduling conflicts?
+
+## 4. The Solution: "Find Time"
+
+Inspired by best-in-class scheduling tools but adapted for our specific B2B use case, I introduced a "Find Time" functionality within the modal.
+
+![High-Fidelity Mockups showing the "Find Time" drawer and grid view](/images/findatime/image%202.png)
+
+**Key Features:**
+*   **On-Demand Availability:** Users click "Find Time" to expand a drawer, keeping the initial UI clean.
+*   **Visual Comparison:** The view aggregates the calendars of all selected staff members side-by-side.
+*   **Smart Filtering:** The system highlights "Common Free Slots"—times where all selected participants are available.
+*   **Conflict Prevention:** If a user attempts to force a booking during a busy slot, the UI provides a warning.
+
+## 5. Validation & Usability Testing
+
+We needed to validate that the "Find Time" interaction flow was intuitive before development.
+
+**Recruitment Strategy**
+To ensure we were testing with the right people, I used Pendo to deploy a targeted in-app banner. We specifically segmented for "Power Users" who had attempted multi-staff bookings in the last 30 days.
+
+![Screenshot of the Pendo recruitment banner targeting the specific user segment](/images/findatime/image%203.png)
+
+**Testing with Maze**
+I conducted unmoderated testing using Maze with 5 internal Customer Success Managers and 3 external power users recruited via the banner.
+
+![Screenshot of Maze heatmaps or success rate data](/images/findatime/image%204.png)
+
+**Findings & Iterations:**
+*   **Issue:** Initially, the "Find Time" button was too subtle. Maze heatmaps showed users trying to manually input dates first.
+*   **Fix:** I increased the visual prominence of the button and placed it adjacent to the date picker.
+*   **Issue:** Users were confused by "Partial Availability" (where 1 of 2 staff were free).
+*   **Fix:** We added clear color coding: Green (All available), Yellow (Partial), Red (None).
+
+## 6. The Final Design
+
+The final design allows a user to initiate a booking from a client's profile, add three different staff members, hit "Find Time," and instantly see the only 30-minute slot available that week.
+
+*   **Efficiency:** Eliminated the need to open multiple browser tabs to check schedules.
+*   **Accuracy:** Reduced the margin for human error to near zero.
+
+## 7. Results & Reflections
+
+The introduction of the "Find Time" feature significantly improved the administrative experience.
+
+*   **Outcome:** Drastically reduced the rate of accidental double-bookings for multi-staff appointments.
+*   **Takeaway:** Context is king. When designing for complex data (like calendars), you cannot rely on simple form fields. You must visualize the data at the moment of decision-making.

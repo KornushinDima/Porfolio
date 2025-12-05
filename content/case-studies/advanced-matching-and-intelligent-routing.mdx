@@ -1,0 +1,148 @@
+---
+title: "Advanced Matching & Intelligent Routing"
+category: "Case Study"
+client: "Unknown"
+year: "2024"
+role: "Product Designer"
+image: "/images/matching.png"
+tags: ["UX", "Product"]
+description: "Case study for Advanced Matching & Intelligent Routing"
+challenge: "Challenge description placeholder."
+solution: "Solution description placeholder."
+results:
+  - value: "100%"
+    label: "Success Rate"
+---
+
+
+Case Study: Advanced Matching & Intelligent Routing
+
+Role: Senior UI/UX Designer | Context: Coconut Software | Pilot Partner: Vancity Credit Union
+
+1. Executive Summary
+
+The Opportunity: Vancity, a major Credit Union, manages a pool of 500+ staff. To control client matching, they had created ~100 distinct service types, causing extreme decision fatigue for users. Furthermore, their linear booking flow was "leaking" revenue by randomly assigning web leads to commissioned staff who should be generating their own leads.
+
+The Solution: I designed "Advanced Matching"—a no-code, logic-based routing engine. By introducing qualifying questions (e.g., asset size, new vs. existing client), we replaced the overwhelming service list with a smart funnel that automatically routes clients to the most profitable and appropriate resource.
+
+2. The Problem: The High Cost of "Linear Booking"
+
+Through design review sessions with Vancity (and validation with US Bank and BNC), we identified three critical failures in the existing linear booking flow:
+
+A. The "Commission Leakage" (Revenue Loss)
+
+Context: Vancity has both Commissioned and Non-Commissioned advisors.
+
+The Issue: Commissioned staff are expected to hunt for their own leads. However, the current system randomly assigns inbound web leads to them.
+
+The Cost: Vancity pays unnecessary commissions on leads the bank generated itself.
+
+B. The "100 Services" List (Decision Fatigue)
+
+To force manual matching, Vancity created separate service titles for every variable (e.g., "Loan &lt;$50k", "Loan &gt;$50k", "Commercial Loan").
+
+Result: Clients were forced to scroll through ~100 options, leading to high drop-off rates and confusion.
+
+C. The Seniority Mismatch (Operational Waste)
+
+Junior Associates need experience but were missing out on simple product bookings.
+
+Senior Associates were wasting billable hours on low-value transactions.
+
+Result: Poor staff utilization and stalled training for juniors.
+
+Stakeholder Insight: "If we can reduce the amount of services that would be a huge win. We have had this issue for years." — Vancity Manager
+
+3. The Solution: Logic-Based Routing
+
+I moved the system away from a "Pick a Service" model to a "Tell us your Needs" model. The core of the design is a Logic Builder that works in the background to simplify the user experience.
+
+The Logic Architecture
+
+We identified specific "Routing Rules" required to solve Vancity's pain points:
+
+# The Commission Gate:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+IF [Source] IS "Web Lead" THEN Route to [Non-Commissioned Team].
+
+# The Asset Qualifier:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+IF [Investment Amount] IS "Under $50k" THEN Route to [Junior Advisor].
+
+IF [Investment Amount] IS "Over $250k" THEN Route to [Private Wealth Manager].
+
+# The Service Consolidator:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Instead of listing 10 different mortgage types, we ask one question: "What are you looking to do?" (Buying a home vs. Renewing).
+
+4. Design Execution (Dark UI & Minimalism)
+
+A. The Admin Experience: "No-Code" Logic Builder
+
+Design Goal: The system needed to feel familiar (like Microsoft Forms) so Bank Managers could use it without IT support.
+
+Visuals: A sleek, dark-themed dashboard.
+
+The Canvas: Deep charcoal background (#1E1E1E) with bright accent lines (Electric Blue) connecting logic nodes.
+
+The Interaction: A "Natural Language" sentence builder.
+
+Dropdown: "If answer is..." Under $50,000
+
+Action: "Route to..." Junior Investment Advisor
+
+Feedback: "The UI feels simpler and more familiar. No coding, no IT support needed."
+
+B. The Client Experience: Progressive Disclosure
+
+Design Goal: Reduce cognitive load.
+
+Visuals: A minimalist, focused card layout.
+
+Screen 1: A single, friendly question: "What brings you in today?" (Options: Investment, Mortgage, Everyday Banking).
+
+Screen 2 (Animation): Smooth transition to the qualifier: "What is the approximate value of investments you'd like to discuss?"
+
+The Magic: The user never sees "Service A" or "Service B." They answer questions, and the system silently assigns the perfect 30-minute slot with the right expert.
+
+5. Success Metrics & Validation
+
+The design is currently entering Beta Pilot with Vancity. Success will be measured against specific KPIs defined during our workshops:
+
+Reduction in Unearned Commissions: Tracking the % of web leads successfully routed to non-commissioned staff.
+
+Service List Reduction: shrinking the ~100 distinct services down to &lt;10 core categories.
+
+Abandonment Rate: Decreasing drop-offs by simplifying the initial selection screen.
+
+Stakeholder Feedback
+
+"This is getting me excited… I don’t want to be too excited until I see the price!" "Checks the box on desired functionality."
+
+6. Portfolio Visuals Checklist
+
+To complete this case study, I will create the following high-fidelity mockups:
+
+The "Before" Diagram: A messy web of 100 services pointing to random staff.
+
+The "After" Flow: A clean funnel showing [Question] > [Logic Gate] > [Correct Staff].
+
+The Logic Builder UI: A screenshot of the Dark Mode admin panel showing the specific rule: IF "Under $50,000" THEN "Junior Advisor".
+
+Mobile Client View: Three screens side-by-side showing the "Question > Answer > Booking" progression.
+
+# Key Improvements in this Version:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Direct Business Case: It explicitly mentions the "Commission vs. Non-Commission" issue, which is a massive selling point for enterprise software.
+
+Specific User Logic: It uses the exact logic examples (Under $50k vs Over $250k) found in your notes.
+
+Design Justification: It explains why the UI looks the way it does (Microsoft Forms familiarity = No IT required).

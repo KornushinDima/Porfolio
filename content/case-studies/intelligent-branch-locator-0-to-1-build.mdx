@@ -1,0 +1,90 @@
+---
+title: "Intelligent Branch Locator (0 to 1 Build)"
+category: "Case Study"
+client: "Unknown"
+year: "2024"
+role: "Product Designer"
+image: "bg-gradient-to-br from-blue-500 to-teal-700"
+tags: ["UX", "Product"]
+description: "Case study for Intelligent Branch Locator (0 to 1 Build)"
+challenge: "Challenge description placeholder."
+solution: "Solution description placeholder."
+results:
+  - value: "100%"
+    label: "Success Rate"
+---
+
+
+Case Study: Intelligent Branch Locator (0 to 1 Build)
+
+Role: Lead Product Designer Project Type: New Product Development (Greenfield) Core Challenge: Designing a unified search engine for physical banking assets ("Points") and service centers ("Locations").
+
+1. The Problem: "The Search Gap"
+
+Financial institutions previously treated their location finders as static directories. Users could find an address, but they lacked contextual visibility.
+
+The User Pain Point: A user would drive to a branch specifically for an appointment, only to find no on-site parking or that the specific service they needed wasn't available there.
+
+The Data Gap: There was no distinction between a full-service branch and a standalone utility (like an off-site ATM).
+
+The "Blind" Arrival: Users had no visibility into how busy a branch was before leaving their house.
+
+2. Strategic Definition: Defining the Data Model
+
+Since we were building from scratch, my first task was defining what a user is actually searching for. Working with the product team, we established two distinct entity types to power the design:
+
+Locations (Service-Based): Physical branches with staff, bookable appointments, and queues.
+
+Points (Feature-Based): Location-based entities without services or staff (e.g., stand-alone ATMs, Kiosks).
+
+Key Design Requirement: The system needed a unified map interface that could gracefully handle both types simultaneously without confusing the user.
+
+3. The Solution: A Dynamic "Filter-First" Map
+
+Feature 1: "Location Features" & Granular Filtering
+
+The Concept: We moved beyond simple address search. We introduced "Location Features"—attributes that act as clickable filters.
+
+The Design: Users can toggle specific amenities such as "Extended Hours," "On-site Parking," or "Drive-Thru."
+
+The Value: This empowers the user to plan their trip based on logistics, not just proximity.
+
+Feature 2: Conditional Search Logic (The "Smart" Flow)
+
+One of the biggest UX challenges was handling the interaction between Booking and Browsing. I designed a conditional logic flow to prevent errors:
+
+Scenario A (Browsing): If the user is just searching the map, we display both Branches ("Locations") and ATMs ("Points").
+
+Scenario B (Booking): If the user selects a specific service first (e.g., "Mortgage Consultation"), the system automatically filters out "Points" (ATMs) from the results.
+
+Why: A user cannot book a mortgage appointment at an ATM. This auto-filtering removes friction and prevents dead-end clicks.
+
+Feature 3: Lobby Integration (Real-Time Wait Times)
+
+The Integration: We connected the Branch Locator UI to the Coconut Lobby product.
+
+The UI: Branch cards on the map display live "Estimated Wait Times" for services.
+
+The Impact: This manages expectations before the client arrives. A user sees "15 min wait" and can decide to join the virtual queue immediately or book an appointment for later.
+
+4. Design Details (Portfolio Highlights)
+
+A. The "Point" vs. "Location" Visuals
+
+I created distinct pin systems. "Locations" (Branches) are interactive and expandable, showing staff availability and wait times. "Points" (ATMs) are lightweight, showing only distance and navigation details.
+
+B. The Admin Perspective (Service Blueprint)
+
+To make this frontend work, I had to design the admin requirements where Managers can associate specific "Tags" (Features) to specific locations. This ensures the frontend filters are always accurate.
+
+5. The Outcome
+
+We successfully launched an "Add-on" feature that transformed the client's website from a static directory into a real-time operational tool.
+
+Enhanced Discovery: Clients can now find "Hidden" assets (like specific off-site ATMs) that were previously buried in text lists.
+
+Reduced Friction: The conditional logic (hiding Points when booking services) significantly reduced "failed booking" attempts.
+
+Operational Transparency: Displaying wait times leveled the load across branches, as users self-distributed to less busy locations.
+
+

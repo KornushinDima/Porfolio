@@ -1,0 +1,108 @@
+---
+title: "Modernizing the Enterprise Scheduler"
+category: "Case Study"
+client: "Unknown"
+year: "2024"
+role: "Product Designer"
+image: "bg-gradient-to-br from-blue-500 to-teal-700"
+tags: ["UX", "Product"]
+description: "Case study for Modernizing the Enterprise Scheduler"
+challenge: "Challenge description placeholder."
+solution: "Solution description placeholder."
+results:
+  - value: "100%"
+    label: "Success Rate"
+---
+
+
+Case Study: Modernizing the Enterprise Scheduler
+
+Project: Core Schedule Redesign (Vertical & Timeline Views) Role: Product Designer Context: Appointment Scheduling & Lobby Management for Financial Institutions
+
+1. The Challenge
+
+Financial advisors and branch managers spend 6-8 hours a day inside the Coconut schedule. The legacy interface was functional but suffered from:
+
+Cognitive Overload: Dense grids and lack of hierarchy made it hard to distinguish between "Walk-ins," "Appointments," and "Breaks."
+
+Legacy UI: The visual style felt dated (spreadsheet-like), lowering perceived value compared to modern SaaS tools.
+
+Accessibility Risks: Many financial institutions require strict WCAG 2.1 AA compliance for their internal tools, which the old grid struggled to meet (specifically contrast and screen reader navigation).
+
+2. The Solution: Dual-View Architecture
+
+To support different personas (The Advisor vs. The Branch Manager), we introduced a seamless toggle between two distinct views.
+
+A. Vertical View (The "My Day" Focus)
+
+Target User: Financial Advisors / Loan Officers.
+
+Goal: Deep focus on personal schedule and appointment details.
+
+# Design Shift:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Moved from a cramped table to Time-Block Cards.
+
+"Lobby Integration": Added a dedicated "Waiting Room" drawer on the side so advisors can see who has arrived without leaving their daily view.
+
+Modern Look: Used subtle drop-shadows to give "lift" to current appointments, separating them from the background grid.
+
+B. Horizontal Timeline View (The "Air Traffic Control" Focus)
+
+Target User: Branch Managers / Greeters.
+
+Goal: Resource allocation—seeing gaps across 10-20 staff members to slot in walk-in customers.
+
+# Design Shift:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Infinite X-Axis Scroll: Placed staff names sticky on the left (Y-axis) with time flowing horizontally.
+
+Gap Visualization: Designed "Empty States" (white space) to be active drop-zones. A manager can drag a "Walk-in Customer" ticket directly into a white space to book it instantly.
+
+3. Accessibility (WCAG 2.1 AA) as a Feature
+
+Since Coconut serves banks, accessibility is a compliance requirement, not just a nice-to-have.
+
+# Keyboard Navigation (Power Users):
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Bank tellers often prefer keyboards over mice. We implemented a Roving Tab Index.
+
+Interaction: Arrow keys move focus between time slots. Enter opens the booking modal. Spacebar toggles selection.
+
+# Color Independence (WCAG 1.4.1):
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Problem: Relying on color (e.g., Green = Confirmed, Red = Cancelled) fails for colorblind users.
+
+Solution: We added Status Icons (a checkmark, a warning sign, a clock) inside the appointment cards alongside the color coding.
+
+# High Contrast Grid:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Standardized grid lines to meet the 3:1 contrast ratio against the background, ensuring the structure is visible on older, low-quality bank monitors.
+
+4. The "Modern Look" (UI Polish)
+
+To move away from the "Excel" look, we applied specific UI refinements:
+
+Zebra Striping Removal: Replaced old-school alternating grey rows with "Hover Guides." The row/column only highlights when the mouse is active over it, reducing visual noise by 80% when the user is just reading.
+
+Typography: Switched to a tabular-numeral font (monospaced numbers) for times, ensuring 10:00 and 11:00 align perfectly vertically, creating a clean scannable rhythm.
+
+Current Time Indicator: Replaced the harsh red line with a "Pill & Gradient" indicator—a softer, branded visual that floats above the grid to show exact progression.
+
+5. Results & Impact
+
+Reduced Booking Time: "Drag-and-drop" on the Horizontal view reduced the time to assign a walk-in customer by ~40%.
+
+Compliance Achieved: Passed 3rd-party accessibility audit for WCAG 2.1 AA, unblocking contracts with Tier 1 banks.
+
+User Feedback: "The new horizontal view makes it impossible to double-book my staff during lunch hours." — Pilot Branch Manager.

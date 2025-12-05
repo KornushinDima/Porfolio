@@ -1,0 +1,196 @@
+---
+title: "Modernizing Enterprise Navigation for Accessibility & Scale"
+category: "Case Study"
+client: "Unknown"
+year: "2024"
+role: "Product Designer"
+image: "bg-gradient-to-br from-blue-500 to-teal-700"
+tags: ["UX", "Product"]
+description: "Case study for Modernizing Enterprise Navigation for Accessibility & Scale"
+challenge: "Challenge description placeholder."
+solution: "Solution description placeholder."
+results:
+  - value: "100%"
+    label: "Success Rate"
+---
+
+
+Case Study: Modernizing Enterprise Navigation for Accessibility & Scale
+
+Role: Product Designer
+
+Focus: Information Architecture (IA), UX Research, Interaction Design, WCAG Accessibility
+
+Tools: Figma, Maze, UsabilityHub
+
+1. Executive Summary
+
+Navigation is the backbone of enterprise software. As features grew over time, our platform's navigation became bloated, leading to high cognitive load for users and scalability issues for the product team.
+
+This project focused on a complete overhaul of the navigation structure. The goal was to transition from a legacy architecture to a modern, WCAG-accessible system. By rigorously testing Object-Oriented vs. Task-Oriented models and evaluating Sidebar vs. Hybrid layouts, we aimed to align the interface with the user's mental model.
+
+2. The Problem
+
+The existing navigation suffered from several core issues:
+
+Scalability: New features were being "dumped" into miscellaneous categories without a clear home.
+
+Accessibility: The contrast, focus states, and screen reader compatibility did not meet modern WCAG 2.1 AA standards.
+
+Wayfinding: Users struggled to differentiate between managing settings for an object versus managing the object itself.
+
+3. The Hypothesis: Defining the Architecture
+
+Before designing UI pixels, we needed to solve the structural problem. We identified two competing Information Architecture (IA) models to test:
+
+Model A: Object-Oriented IA (The "Noun" Approach)
+
+Concept: Organizes navigation around the key entities users interact with.
+
+Hypothesis: This fits distinct user roles (e.g., a Resource Manager only cares about "Resources," an Analyst only cares about "Reports").
+
+# Structure Tested:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Insights: Analytics, Reports
+
+Clients: Clients, Staff, Groups
+
+Locations: Points, Meeting Spaces, Locations
+
+Services: Services, Hours
+
+Settings: Import/Export, Support
+
+Model B: Task-Oriented IA (The "Verb" Approach)
+
+Concept: Organizes navigation around actions and workflows.
+
+Hypothesis: This lowers the learning curve for new users by explicitly stating what they can do.
+
+# Structure Tested:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Manage: Clients, Staff, Staff Groups, Services, Hours, Points, Meeting Spaces, Locations
+
+Configure: Settings, Import/Export
+
+Support: Help Information, Coconut Support
+
+4. User Research & Methodology
+
+To validate our assumptions, I designed a quantitative usability test plan using Maze.
+
+Goals
+
+IA Validation: Determine if users think in "Nouns" (Objects) or "Verbs" (Tasks).
+
+Layout Efficiency: Compare Sidebar-only vs. Sidebar + Topbar layouts.
+
+Metrics: Time on Task, First-click Success Rate, and Confidence Score.
+
+Part 1: Information Architecture Testing (Tree Testing)
+
+We removed UI bias by using simplified tree structures. Users were given scenarios such as:
+
+"Update the hours of operation for the Main Branch." "Find the staff schedule for tomorrow."
+
+# The Variables:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Variable A (OO Model): Users had to navigate via "Locations" or "Staff."
+
+Variable B (TO Model): Users had to navigate via "Manage."
+
+Part 2: Visual Layout Testing
+
+Once we had IA insights, we tested the visual vessel for that structure.
+
+Variant A: Sidebar + Topbar: Sidebar for primary modules, Topbar for global context (Profile, Location Picker).
+
+Variant B: Sidebar-Only: A unified "single pane of glass" where all navigation and context lives in a collapsible left rail.
+
+# Key Metrics Tracked:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Visual Scanning: Heatmaps to see where eyes/cursors went first.
+
+Misclicks: How often users clicked the wrong grouping.
+
+Preference: "Which layout felt cleaner or more efficient?"
+
+5. Insights & Results
+
+IA Findings: The Power of Objects
+
+[Note: Customize this section based on your actual results. Below is a common outcome for this type of test]
+
+While the Task-Oriented model seemed beginner-friendly, our testing revealed that it created scaling issues. The "Manage" bucket became too deep, requiring too many clicks to reach a specific entity.
+
+# The Object-Oriented model won because:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Directness: Users looking for "Staff" naturally scanned for the word "Staff," not the action "Manage."
+
+Scalability: We can add new objects (e.g., "Vehicles" or "Equipment") without disrupting the "Manage" workflow.
+
+Role Alignment: It matched the mental model of our power users who "own" specific domains.
+
+Layout Findings: The Sidebar Consolidates Focus
+
+The Sidebar-Only layout outperformed the hybrid model. Users often ignored the Topbar, suffering from "banner blindness." By consolidating navigation into a single vertical list, we reduced the eye-travel required to switch contexts.
+
+6. The Solution: Accessible & Object-Oriented
+
+Based on the data, we moved forward with the Object-Oriented IA in a Sidebar-Only layout.
+
+# Key Design Features:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+# WCAG Compliance:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Implemented strict 4.5:1 contrast ratios for text and icons.
+
+Added keyboard navigation support (Tab indexing) for the collapsible sidebar.
+
+Ensured focus states are visible and high-contrast.
+
+# Naming Conventions:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+We standardized labels to be consistent nouns (e.g., changed "Configure" to "Settings").
+
+Grouped related items (e.g., "Meeting Spaces" under "Locations") to reduce top-level clutter.
+
+Final Architecture
+
+(The winning structure)
+
+Insights (Analytics, Reports)
+
+Operations (Clients, Staff, Groups)
+
+Resources (Locations, Meeting Spaces, Assets)
+
+System (Settings, Support)
+
+7. Reflection & Next Steps
+
+This project proved that Information Architecture is not a guessing game. By isolating the IA variable from the Layout variable, we were able to make a data-informed decision that supports both power users and novices.
+
+# Next Steps:
+
+![Placeholder Image](/images/placeholder.jpg)
+
+Conduct live A/B testing on the production site to monitor adoption rates.
+
+Develop a "Getting Started" wizard to help new users understand the Object-Oriented groupings.
