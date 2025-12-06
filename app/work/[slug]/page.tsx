@@ -49,14 +49,14 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         ),
         p: (props: any) => (
             <ScrollReveal>
-                <p className="text-zinc-400 leading-relaxed text-xl md:text-2xl mb-6">
+                <p className="text-zinc-300/80 leading-relaxed text-xl md:text-2xl mb-6 max-w-3xl mx-auto">
                     {props.children}
                 </p>
             </ScrollReveal>
         ),
         ul: (props: any) => (
             <ScrollReveal>
-                <ul className="list-disc list-inside text-zinc-400 mb-6 space-y-2 max-w-3xl mx-auto">
+                <ul className="list-disc list-inside text-zinc-300/80 mb-6 space-y-2 max-w-3xl mx-auto">
                     {props.children}
                 </ul>
             </ScrollReveal>
@@ -154,6 +154,21 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                         <p className="text-zinc-200 font-medium">UX Research, UI Design</p>
                     </div>
                 </ScrollReveal>
+
+                {/* Problem Statement */}
+                {project.challenge && (
+                    <ScrollReveal delay={0.35} className="mb-24">
+                        <div className="bg-zinc-900/50 border border-zinc-800 rounded-3xl p-8 md:p-12">
+                            <h3 className="text-xl md:text-2xl font-medium text-white mb-6 flex items-center gap-3">
+                                <span className="w-8 h-1 bg-violet-500 rounded-full"></span>
+                                The Challenge
+                            </h3>
+                            <p className="text-zinc-300/80 text-xl md:text-2xl leading-relaxed max-w-4xl">
+                                {project.challenge}
+                            </p>
+                        </div>
+                    </ScrollReveal>
+                )}
 
                 {/* Main Content Wrapper */}
                 <div className="space-y-24">
