@@ -7,6 +7,7 @@ import { PROFILE } from '@/config/portfolio';
 
 import { Gallery } from '@/components/Gallery';
 import { MDXImage } from '@/components/ui/MDXImage';
+import { ScrollReveal } from '@/components/ui/ScrollReveal';
 
 export async function generateStaticParams() {
     const posts = getCaseStudies();
@@ -24,34 +25,57 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
 
     const components = {
         h1: (props: any) => (
-            <h3 className="text-2xl font-bold text-white mb-6 flex items-center gap-3 mt-12">
-                <span className="w-8 h-1 bg-violet-500 rounded-full"></span>
-                {props.children}
-            </h3>
+            <ScrollReveal>
+                <h3 className="text-3xl md:text-4xl font-medium text-white mb-6 flex items-center gap-3 mt-24 max-w-3xl mx-auto">
+                    <span className="w-8 h-1 bg-violet-500 rounded-full"></span>
+                    {props.children}
+                </h3>
+            </ScrollReveal>
         ),
         h2: (props: any) => (
-            <h2 className="text-2xl font-bold text-white mb-6 flex items-center gap-3 mt-12">
-                <span className="w-8 h-1 bg-violet-500 rounded-full"></span>
-                {props.children}
-            </h2>
+            <ScrollReveal>
+                <h2 className="text-3xl md:text-4xl font-medium text-white mb-6 flex items-center gap-3 mt-24 max-w-3xl mx-auto">
+                    <span className="w-8 h-1 bg-violet-500 rounded-full"></span>
+                    {props.children}
+                </h2>
+            </ScrollReveal>
+        ),
+        h3: (props: any) => (
+            <ScrollReveal>
+                <h3 className="text-2xl md:text-3xl font-medium text-white mb-4 mt-12 max-w-3xl mx-auto">
+                    {props.children}
+                </h3>
+            </ScrollReveal>
         ),
         p: (props: any) => (
-            <p className="text-zinc-400 leading-relaxed text-lg md:text-xl mb-6">
-                {props.children}
-            </p>
+            <ScrollReveal>
+                <p className="text-zinc-400 leading-relaxed text-xl md:text-2xl mb-6">
+                    {props.children}
+                </p>
+            </ScrollReveal>
         ),
         ul: (props: any) => (
-            <ul className="list-disc list-inside text-zinc-400 mb-6 space-y-2">
-                {props.children}
-            </ul>
+            <ScrollReveal>
+                <ul className="list-disc list-inside text-zinc-400 mb-6 space-y-2 max-w-3xl mx-auto">
+                    {props.children}
+                </ul>
+            </ScrollReveal>
         ),
         li: (props: any) => (
-            <li className="text-lg">
+            <li className="text-xl md:text-2xl">
                 {props.children}
             </li>
         ),
-        img: MDXImage,
-        Gallery: Gallery,
+        img: (props: any) => (
+            <ScrollReveal>
+                <MDXImage {...props} />
+            </ScrollReveal>
+        ),
+        Gallery: (props: any) => (
+            <ScrollReveal>
+                <Gallery {...props} />
+            </ScrollReveal>
+        ),
     };
 
     return (
@@ -69,26 +93,26 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                 </Link>
 
                 {/* Header Section */}
-                <div className="mb-12">
+                <ScrollReveal className="mb-12">
                     <div className="flex items-center gap-3 mb-6">
                         <span className="px-3 py-1 rounded-full bg-violet-500/10 text-violet-400 border border-violet-500/20 text-xs font-medium uppercase tracking-wide">
                             {project.category}
                         </span>
-                        <span className="text-zinc-500 text-sm">•</span>
+                        <span className="text-zinc-400 text-sm">•</span>
                         <span className="text-zinc-400 text-sm font-mono">{project.year}</span>
                     </div>
 
-                    <h1 className="text-4xl md:text-6xl font-bold text-white mb-6 leading-tight">
+                    <h1 className="text-5xl md:text-7xl font-medium text-white mb-6 leading-tight">
                         {project.title}
                     </h1>
 
-                    <p className="text-xl text-zinc-400 max-w-3xl leading-relaxed">
+                    <p className="text-2xl text-zinc-400 max-w-3xl leading-relaxed">
                         {project.description}
                     </p>
-                </div>
+                </ScrollReveal>
 
                 {/* Hero Image */}
-                <div className={`w-full h-64 md:h-[500px] rounded-3xl mb-16 relative overflow-hidden shadow-2xl shadow-black/50 ${project.image.startsWith('/') || project.image.startsWith('http') ? '' : project.image}`}>
+                <ScrollReveal delay={0.2} className={`w-full h-64 md:h-[500px] rounded-3xl mb-16 relative overflow-hidden shadow-2xl shadow-black/50 ${project.image.startsWith('/') || project.image.startsWith('http') ? '' : project.image}`}>
                     {/* Render Image if it's a URL */}
                     {(project.image.startsWith('/') || project.image.startsWith('http')) && (
                         <div className="absolute inset-0">
@@ -109,42 +133,42 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                             {project.category === 'Web' && <Globe size={150} className="text-white" />}
                         </div>
                     )}
-                </div>
+                </ScrollReveal>
 
                 {/* Project Meta Grid */}
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-zinc-800 py-8 mb-20">
+                <ScrollReveal delay={0.3} className="grid grid-cols-2 md:grid-cols-4 gap-8 border-y border-zinc-800 py-8 mb-20">
                     <div>
-                        <h4 className="text-xs uppercase tracking-wider text-zinc-500 mb-2">Client</h4>
+                        <h4 className="text-xs uppercase tracking-wider text-zinc-400 mb-2">Client</h4>
                         <p className="text-zinc-200 font-medium">{project.client}</p>
                     </div>
                     <div>
-                        <h4 className="text-xs uppercase tracking-wider text-zinc-500 mb-2">Role</h4>
+                        <h4 className="text-xs uppercase tracking-wider text-zinc-400 mb-2">Role</h4>
                         <p className="text-zinc-200 font-medium">{project.role}</p>
                     </div>
                     <div>
-                        <h4 className="text-xs uppercase tracking-wider text-zinc-500 mb-2">Timeline</h4>
+                        <h4 className="text-xs uppercase tracking-wider text-zinc-400 mb-2">Timeline</h4>
                         <p className="text-zinc-200 font-medium">4 Months</p>
                     </div>
                     <div>
-                        <h4 className="text-xs uppercase tracking-wider text-zinc-500 mb-2">Deliverables</h4>
+                        <h4 className="text-xs uppercase tracking-wider text-zinc-400 mb-2">Deliverables</h4>
                         <p className="text-zinc-200 font-medium">UX Research, UI Design</p>
                     </div>
-                </div>
+                </ScrollReveal>
 
                 {/* Main Content Wrapper */}
                 <div className="space-y-24">
 
                     {/* Content from MDX */}
-                    <section className="max-w-3xl mx-auto">
+                    <section className="max-w-5xl mx-auto [&_p]:max-w-3xl [&_p]:mx-auto [&_p:has(figure)]:max-w-none">
                         <MDXRemote source={project.content} components={components} />
                     </section>
 
                     {/* Results Section - Full Width Prominent Grid */}
-                    <section className="relative">
+                    <ScrollReveal delay={0.4} className="relative">
                         <div className="absolute inset-0 bg-gradient-to-b from-violet-500/5 to-transparent rounded-3xl -z-10" />
 
                         <div className="py-10">
-                            <h3 className="text-3xl font-bold text-white mb-12 text-center">Impact & Results</h3>
+                            <h3 className="text-3xl font-medium text-white mb-12 text-center">Impact & Results</h3>
 
                             <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                                 {(project.results || []).map((res, i) => (
@@ -152,7 +176,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                                         key={i}
                                         className="flex flex-col items-center justify-center p-8 bg-zinc-900/80 backdrop-blur-sm rounded-2xl border border-zinc-800 hover:border-violet-500/50 transition-all duration-300 group"
                                     >
-                                        <span className="text-5xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-500 mb-4 group-hover:from-violet-400 group-hover:to-indigo-400 transition-all">
+                                        <span className="text-5xl md:text-6xl font-medium text-transparent bg-clip-text bg-gradient-to-br from-white to-zinc-500 mb-4 group-hover:from-violet-400 group-hover:to-indigo-400 transition-all">
                                             {res.value}
                                         </span>
                                         <div className="h-1 w-12 bg-zinc-700 rounded-full mb-4 group-hover:bg-violet-500 transition-colors" />
@@ -163,7 +187,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                                 ))}
                             </div>
                         </div>
-                    </section>
+                    </ScrollReveal>
 
                 </div>
 

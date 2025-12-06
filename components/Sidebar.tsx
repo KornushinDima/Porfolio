@@ -6,11 +6,11 @@ import { PROFILE } from '@/config/portfolio';
 
 export function Sidebar() {
     return (
-        <div className="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between py-12 lg:py-20 px-6 lg:px-12 border-b lg:border-b-0 lg:border-r border-zinc-800 bg-zinc-950 z-10">
+        <div className="lg:sticky lg:top-0 lg:h-screen flex flex-col justify-between py-12 lg:py-20 px-6 lg:px-12 border-b lg:border-b-0 border-zinc-800 bg-zinc-950 z-10">
             <div>
                 {/* Avatar / Logo Area */}
                 <Link href="/" className="block mb-8 cursor-pointer">
-                    <div className="w-20 h-20 rounded-full bg-gradient-to-br from-zinc-700 to-zinc-800 border-2 border-zinc-600 flex items-center justify-center text-2xl font-bold text-zinc-300 shadow-xl shadow-zinc-900/50 hover:scale-105 transition-transform">
+                    <div className="w-20 h-20 rounded-full border-4 border-white flex items-center justify-center text-2xl font-bold text-white shadow-xl shadow-zinc-900/50 hover:scale-105 transition-transform">
                         DK
                     </div>
                 </Link>
@@ -42,8 +42,7 @@ export function Sidebar() {
 
                 {/* Navigation / Quick Links (Desktop) */}
                 <nav className="hidden lg:block space-y-4 mb-16">
-                    <Link href="/#about" className="block text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider text-left">About</Link>
-                    <Link href="/#experience" className="block text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider text-left">Experience</Link>
+                    <Link href="/about" className="block text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider text-left">About</Link>
                     <Link href="/#work" className="block text-zinc-400 hover:text-white transition-colors text-sm uppercase tracking-wider text-left">Selected Work</Link>
                 </nav>
             </div>

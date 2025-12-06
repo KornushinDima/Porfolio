@@ -17,6 +17,7 @@
 }
 
 body {
+  font-family: var(--font-dm-sans), ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
   color: rgb(var(--foreground-rgb));
   background: linear-gradient(
       to bottom,

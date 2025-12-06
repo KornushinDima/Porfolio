@@ -18,6 +18,7 @@ export type CaseStudy = {
     solution: string;
     results: { value: string; label: string }[];
     content: string;
+    order?: number;
 };
 
 export function getCaseStudies(): CaseStudy[] {
@@ -35,7 +36,21 @@ export function getCaseStudies(): CaseStudy[] {
         } as CaseStudy;
     });
 
-    return allPostsData;
+    return allPostsData.sort((a, b) => {
+        // Sort by defined order first
+        if (a.order !== undefined && b.order !== undefined) {
+            return a.order - b.order;
+        }
+        if (a.order !== undefined) return -1;
+        if (b.order !== undefined) return 1;
+
+        // Fallback to year (descending)
+        const yearDiff = parseInt(b.year) - parseInt(a.year);
+        if (yearDiff !== 0) return yearDiff;
+
+        // Fallback to title (alphabetical)
+        return a.title.localeCompare(b.title);
+    });
 }
 
 export function getCaseStudy(slug: string): CaseStudy | undefined {

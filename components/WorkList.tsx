@@ -31,7 +31,7 @@ export function WorkList({ initialProjects }: WorkListProps) {
     }, [activeFilter, initialProjects]);
 
     return (
-        <section id="work">
+        <section id="work" className="mb-24">
             <div className="flex flex-col md:flex-row md:items-center justify-between mb-10 gap-6">
                 <h2 className="text-2xl font-bold text-white">Selected Works</h2>
 
