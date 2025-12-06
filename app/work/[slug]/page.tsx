@@ -49,9 +49,9 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
         ),
         p: (props: any) => (
             <ScrollReveal>
-                <p className="text-zinc-300/80 leading-relaxed text-xl md:text-2xl mb-6 max-w-3xl mx-auto">
+                <div className="text-zinc-300/80 leading-relaxed text-xl md:text-2xl mb-6 max-w-3xl mx-auto">
                     {props.children}
-                </p>
+                </div>
             </ScrollReveal>
         ),
         ul: (props: any) => (
