@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 
 interface GalleryProps {
     images: string[];
@@ -18,7 +19,7 @@ export function Gallery({ images, columns = 2 }: GalleryProps) {
                 <div key={index} className="relative rounded-xl overflow-hidden shadow-lg border border-zinc-800 group">
                     <div className="aspect-[4/3] relative">
                         <Image
-                            src={src}
+                            src={getAssetPath(src)}
                             alt={`Gallery image ${index + 1}`}
                             fill
                             className="object-cover transition-transform duration-500 group-hover:scale-105"

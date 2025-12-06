@@ -2,6 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image';
 import { ArrowUpRight, Smartphone, Layers, Globe } from 'lucide-react';
 import { CaseStudy } from '@/lib/mdx';
+import { getAssetPath } from '@/lib/utils';
 
 interface ProjectCardProps {
     project: CaseStudy;
@@ -51,7 +52,7 @@ export function ProjectCard({ project }: ProjectCardProps) {
                 <div className={`h-64 md:h-full md:w-7/12 relative overflow-hidden order-1 md:order-2 ${!isImage ? project.image : ''}`}>
                     {isImage && (
                         <Image
-                            src={project.image}
+                            src={getAssetPath(project.image)}
                             alt={project.title}
                             fill
                             className="object-cover transition-transform duration-700 group-hover:scale-105"

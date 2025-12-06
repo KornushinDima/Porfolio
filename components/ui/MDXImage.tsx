@@ -1,4 +1,5 @@
 import Image from 'next/image';
+import { getAssetPath } from '@/lib/utils';
 
 interface MDXImageProps extends React.ImgHTMLAttributes<HTMLImageElement> {
     src?: string;
@@ -18,7 +19,7 @@ export function MDXImage({ src, alt, ...props }: MDXImageProps) {
         <figure className="my-12">
             <div className="relative rounded-xl overflow-hidden border border-zinc-800 shadow-2xl bg-zinc-900/50">
                 <img
-                    src={src}
+                    src={getAssetPath(src)}
                     alt={alt || ''}
                     className="w-full h-auto object-cover"
                     loading="lazy"

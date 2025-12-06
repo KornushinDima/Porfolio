@@ -3,6 +3,7 @@ import { notFound } from 'next/navigation';
 import { ChevronLeft, ArrowUpRight, Smartphone, Layers, Globe } from 'lucide-react';
 import { MDXRemote } from 'next-mdx-remote/rsc';
 import { getCaseStudies, getCaseStudy } from '@/lib/mdx';
+import { getAssetPath } from '@/lib/utils';
 import { PROFILE } from '@/config/portfolio';
 
 import { Gallery } from '@/components/Gallery';
@@ -117,7 +118,7 @@ export default function CaseStudyPage({ params }: { params: { slug: string } }) 
                     {(project.image.startsWith('/') || project.image.startsWith('http')) && (
                         <div className="absolute inset-0">
                             <img
-                                src={project.image}
+                                src={getAssetPath(project.image)}
                                 alt={project.title}
                                 className="w-full h-full object-cover"
                             />
